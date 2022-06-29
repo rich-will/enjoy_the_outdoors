@@ -40,32 +40,48 @@
                 </nav>   
 
         </header>
+        
+        
         <main>
             
-        <!--Erics Sample -->
-        <h1>Welcome to the National Parks Search Page!</h1>
+            <select id="searchTypeDDL" class="form-select">
+                <option value="">Choose a Search Type</option>
+                <option value="location">Search By Location</option>
+                <option value="type">Search By Type</option>
+            </select>
+    
+    
+            <select id="locations" class="d-none">
+                
+            </select>
+    
+            <select id="types" class="d-none">
+                <option value="">Select a Type</option>
+            </select>
 
-        <!-- <button id="theDemoButton">The Sample Button</button>
-       
-         <ul id="locations" class="d-none">
-            <li>This is eric's sample list item</li>
-        </ul>
 
-        <ul id="partTypes" class="d-none">
-            <li>This is eric's sample list item</li>
-        </ul> 
-
-        <ul id="parks" class="d-none">
-            <li>This is eric's sample list item 1</li>
-        </ul> -->
-
-       <!--End Erics Sample -->
+            <table class="table d-none" id="searchResults">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>State</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+    
 
      
 
 
 
         <!--Starting attempt to display all park location at button push -->
+        <!-- <div class="container-fluid">
+            <form>
+                <legend>How would you like to search National Parks?</legend>
+                <div class="mb-3">
 
         <button id="allParksButton">All Parks</button>
        
@@ -80,6 +96,38 @@
      <ul id="parks" class="d-none">
          <li>parks</li>
      </ul>
+
+     </div>
+     </form>
+    </div> -->
+
+     <!-- It's a mess -->
+
+     <!-- Trying drop down Search Selection
+     <div class="container-fluid">
+        
+        <label for="searchType">How would you like to search?:</label>
+
+        <select id="searchTypeDDL" class="form-select">
+            <option value="">Choose a Search Type</option>
+            <option value="location">By Park Location</option>
+            <option value="type">By Park Type</option>
+            
+        </select>
+
+
+        <select id="location" class="d-none">
+                       
+        </select>
+
+        <select id="type" class="d-none">
+                       
+        </select>
+   
+                 
+     </div> -->
+
+
 
            
         </main>
