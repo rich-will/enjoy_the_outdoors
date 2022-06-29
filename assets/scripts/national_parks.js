@@ -43,6 +43,14 @@ locationsDDL.addEventListener("change", function(event){
     
 })
 
+typesDDL.addEventListener("change", function(event){
+    
+    let choice = ""
+    choice = event.target.value
+    selectedtype(choice)
+    
+    
+})
 //functions to be called during search type code blocks above
 
 function selectedlocation(location){
@@ -55,6 +63,24 @@ function selectedlocation(location){
 
     }) 
     console.log(filteredparks)
+
+    generateTableRows(filteredparks)
+
+    searchResults.classList.remove("d-none")
+}
+
+function selectedtype(type){
+    console.log("this is the type-" + type)
+    
+    let filteredparks = nationalParksArray.filter(function(nationalPark){
+        // if(nationalPark.LocationName===type){return true}
+        let npname = nationalPark.LocationName
+        if (npname.toLowerCase().indexOf(type.toLowerCase()) >= 0){return true}
+
+        return false
+    })
+    console.log(type)
+    console.log("these are the filtered parks -" + filteredparks)
 
     generateTableRows(filteredparks)
 
