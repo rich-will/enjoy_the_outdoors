@@ -78,8 +78,7 @@ function selectedtype(type){
         if (npname.toLowerCase().indexOf(type.toLowerCase()) >= 0){return true}
         
     })
-    console.log(type)
-    console.log("these are the filtered parks -" + filteredparks)
+    
 
     generateTableRows(filteredparks)
 
@@ -89,17 +88,21 @@ function selectedtype(type){
 function generateTableRows(someArrayOfData){
     searchResultsBody.innerHTML = ""
     someArrayOfData.forEach((park)=>{
+        
         let row = ""
         row += `<tr>`
         row += `<td>${park.LocationName}</td>`
+        row += `<td>${park.Address}</td>`
+        row += `<td>${park.City}</td>`
         row += `<td>${park.State}</td>`
+        row += `<td>${park.Phone}</td>`
         row += `</tr>`
 
         searchResultsBody.innerHTML += row
         
     })
 }
-
+              
 
 function generateLocationsDDLOptions(){
 
@@ -115,8 +118,8 @@ function generateTypesDDLOptions(){
 
     locationsDDL.innerHTML = `<option value="">Choose A Location</option>`
 
-    parkTypesArray.forEach((partkType) => {
-        typesDDL.innerHTML += `<option value="${partkType}">${partkType}</option>`
+    parkTypesArray.forEach((parkType) => {
+        typesDDL.innerHTML += `<option value="${parkType}">${parkType}</option>`
     })
 
 }
@@ -136,22 +139,10 @@ function generateTypesDDLOptions(){
 // let parkTypeUL = document.querySelector("#parkTypes")
 // let parksUl = document.querySelector("#parks")
 
-
-
-
-
-
-
-
-
-
-
-
 // theSampleButton.addEventListener("click", function(event){
 //     console.log(locationsArray)
 //     console.log(nationalParksArray)
 //     console.log(parkTypesArray)
-
 
 //     locationsArray.forEach((location) => {
 //         theSampleUL.innerHTML += `<li>${location}</li>`
