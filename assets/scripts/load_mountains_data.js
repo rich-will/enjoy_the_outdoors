@@ -31,5 +31,5 @@ function generateMountainsDDL(){
     mountainsArray.forEach((mountain) => {
         mountainsDDL.innerHTML += `<option value="${mountain.name}">${mountain.name}</option>`
     })
-    console.log(mountain.name + "json mountain.name")
+  
 }

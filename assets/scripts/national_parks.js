@@ -29,11 +29,13 @@ searchTypeDDL.addEventListener("change", function(event){
         typesDDL.classList.add("d-none")
     }
 
-    if(event.target.value === "type"){
+    else if(event.target.value === "type"){
         generateTypesDDLOptions()
         typesDDL.classList.remove("d-none")
         locationsDDL.classList.add("d-none")
     }
+
+    
 
 })
 
@@ -89,13 +91,17 @@ function generateTableRows(someArrayOfData){
     searchResultsBody.innerHTML = ""
     someArrayOfData.forEach((park)=>{
         
+        
         let row = ""
         row += `<tr>`
         row += `<td>${park.LocationName}</td>`
         row += `<td>${park.Address}</td>`
         row += `<td>${park.City}</td>`
         row += `<td>${park.State}</td>`
-        row += `<td>${park.Phone}</td>`
+        if(park.Phone ===0){
+            row += `<td>N/A</td>`}
+        else{
+        row += `<td>${park.Phone}</td>`}
         row += `</tr>`
 
         searchResultsBody.innerHTML += row

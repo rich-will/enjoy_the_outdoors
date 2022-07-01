@@ -29,7 +29,7 @@ function generateMtnCard(mountain){
         card += `   <p class="card-text"></p>` 
         card += `   <p class="card-text">${mountain.desc}</p>` 
         card += `   <p class="card-text">Effort: ${mountain.effort}</p>` 
-        card += `   <p class="card-text">Coordinates: ${mountain.coords}</p>`      
+        card += `   <p class="card-text">Coordinates: ${mountain.coords.lat},${mountain.coords.lng}</p>`      
         card += `   </div>`
         card += `   </div>`
         
